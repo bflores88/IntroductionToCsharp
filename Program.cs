@@ -10,5 +10,8 @@ class Program
 
         string nums = "One\nTwo\nThree";
         Console.WriteLine(nums);
+
+        string path = @"C:\\brenda\\DotNet\\Training\\Csharp";
+        Console.WriteLine(path);
     }
 }
