@@ -7,5 +7,8 @@ class Program
     {
         string name = "\"Brenda\"";
         Console.WriteLine(name);
+
+        string nums = "One\nTwo\nThree";
+        Console.WriteLine(nums);
     }
 }
