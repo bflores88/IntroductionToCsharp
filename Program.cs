@@ -3,21 +3,19 @@ using System.Text;
 
 class Program
 {
-    static void Main()
+    public static void Main()
     {
-        // break statement causes the control to get out of the loop
-        for (int i = 1; i <= 20; i++)
+        Program p = new Program();
+        p.evenNumbers();
+    }
+
+    public void evenNumbers()
+    {
+        int start = 0;
+        while (start <= 20)
         {
-            Console.WriteLine(i);
-            
-            if(i==10) break;
-        }
-        
-        // continue statement will end code execution in the for loop and start again at the next increment
-        for (int j = 0; j <= 20; j++)
-        {
-            if(j%2 == 1) continue;
-            Console.WriteLine(j);
+            Console.WriteLine(start);
+            start = start + 2;
         }
     }
 }
