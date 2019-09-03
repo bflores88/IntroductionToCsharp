@@ -5,32 +5,44 @@ class Program
 {
     static void Main()
     {
-        string userChoice = string.Empty;
-        
+        int totalCoffeeCost = 0;
+        string userDecision = string.Empty;
+
         do
         {
-            Console.WriteLine("Please enter your target");
-            int userTarget = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please Select Your Coffee Size: 1 - Small, 2 - Medium, 3 - Large");
+            int userChoice = int.Parse(Console.ReadLine());
 
-            int start = 0;
-
-            while (start <= userTarget)
+            switch (userChoice)
             {
-                Console.Write(start + " ");
-                start = start + 2;
+                case 1:
+                    totalCoffeeCost += 1;
+                    break;
+                case 2:
+                    totalCoffeeCost += 2;
+                    break;
+                case 3:
+                    totalCoffeeCost += 3;
+                    break;
+                default:
+                    Console.WriteLine("Your choice {0} is invalid", userChoice);
+                    break;
             }
 
             do
             {
-                Console.WriteLine("\nDo you want to continue - Yes or No?");
+                Console.WriteLine("Do you want to buy another coffee - Yes or No?");
+                userDecision = Console.ReadLine();
 
-                userChoice = Console.ReadLine().ToUpper();
-
-                if (userChoice != "YES" && userChoice != "NO")
+                if (userDecision.ToUpper() != "YES" && userDecision.ToUpper() != "NO")
                 {
-                    Console.WriteLine("Invalid choice, please say Yes or No");
+                    Console.WriteLine("Your choice {0} is invalid.  Please try again...", userDecision);
                 }
-            } while (userChoice != "YES" && userChoice != "NO");
-        } while (userChoice == "YES");
+            } while (userDecision.ToUpper() != "YES" && userDecision.ToUpper() != "NO");
+        } while (userDecision.ToUpper() != "NO");
+
+        Console.WriteLine("Thank you for shopping with us");
+        Console.WriteLine("Bill amount = {0}", totalCoffeeCost);
+
     }
 }
