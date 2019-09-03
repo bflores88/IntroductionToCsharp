@@ -5,7 +5,7 @@ class Program
     {
         float f = 123.45F;
         
-        int i = (int)f;
+        int i = Convert.ToInt32(f);
 
         Console.WriteLine(i);
 
