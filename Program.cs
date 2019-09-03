@@ -3,21 +3,15 @@ class Program
 {
     static void Main()
     {
-        string strNumber = "100TG";
+        int[] evenNumbers = new int[3];
 
-        int Result = 0;
-
-        bool IsConversionSuccessful = int.TryParse(strNumber, out Result);
-
-        if (IsConversionSuccessful)
-        {
-            Console.WriteLine(Result); 
-        }
-        else
-        {
-            Console.WriteLine(("Please enter a valid number."));
-        }
+        evenNumbers[0] = 0;
+        evenNumbers[1] = 2;
+        evenNumbers[2] = 4;
         
+        Console.WriteLine(evenNumbers[1]);
         
+        // Advantages: strongly typed
+        // Disadvantages: cannot grow in size once initialized; have to rely on integral indices to store/retrieve items from array
     }
 }
