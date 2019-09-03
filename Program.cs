@@ -5,18 +5,11 @@ class Program
 {
     static void Main()
     {
-        bool? AreYouMajor = null;
+        int? TicketsOnSale = 100;
 
-        if (AreYouMajor == true)
-        {
-            Console.WriteLine("User is a Major");
-        } else if (AreYouMajor == false)
-        {
-            Console.WriteLine("User is Not Major");
-        }
-        else
-        {
-            Console.WriteLine("User did not answer the question");
-        }
+        int AvailableTickets = TicketsOnSale ?? 0;
+        
+        Console.WriteLine("AvailableTickets = {0}", AvailableTickets);
+
     }
 }
