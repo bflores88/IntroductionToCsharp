@@ -5,11 +5,13 @@ class Program
 {
     static void Main()
     {
-        int? TicketsOnSale = 100;
-
-        int AvailableTickets = TicketsOnSale ?? 0;
+        int i = 100;
         
-        Console.WriteLine("AvailableTickets = {0}", AvailableTickets);
+        // float is bigger datatype than int. So, no loss of
+        // data and exceptions. Hence implicit conversion
+        float f = i;
+        
+        Console.WriteLine(f);
 
     }
 }
