@@ -5,14 +5,13 @@ class Program
 {
     public static void Main()
     {
-        Program p = new Program();
-        p.evenNumbers();
+        Program.evenNumbers(30);
     }
 
-    public void evenNumbers()
+    public static void evenNumbers(int target)
     {
         int start = 0;
-        while (start <= 20)
+        while (start <= target)
         {
             Console.WriteLine(start);
             start = start + 2;
