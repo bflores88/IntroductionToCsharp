@@ -11,6 +11,11 @@ class Program
         Numbers[1] = 102;
         Numbers[2] = 103;
 
+        for (int j = 0; j < Numbers.Length; j++)
+        {
+            Console.WriteLine(Numbers[j]);
+        }
+
         int i = 0;
 
         while (i < Numbers.Length)
