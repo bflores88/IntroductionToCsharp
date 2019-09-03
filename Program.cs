@@ -3,11 +3,9 @@ class Program
 {
     static void Main()
     {
-        float f = 123.45F;
+        string strNumber = "100TG";
+        int i = int.Parse(strNumber);
         
-        int i = Convert.ToInt32(f);
-
         Console.WriteLine(i);
-
     }
 }
