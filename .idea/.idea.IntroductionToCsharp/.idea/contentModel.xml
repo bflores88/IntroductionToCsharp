@@ -17,6 +17,72 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="Program.cs" t="Include" />
+      <e p="ProjectA.TeamA" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="ProjectA.TeamA.deps.json" t="Include" />
+              <e p="ProjectA.TeamA.dll" t="Include" />
+              <e p="ProjectA.TeamA.pdb" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ClassA.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="ProjectA.TeamA.AssemblyInfo.cs" t="Include" />
+              <e p="ProjectA.TeamA.AssemblyInfoInputs.cache" t="Include" />
+              <e p="ProjectA.TeamA.assets.cache" t="Include" />
+              <e p="ProjectA.TeamA.csproj.CoreCompileInputs.cache" t="Include" />
+              <e p="ProjectA.TeamA.csproj.FileListAbsolute.txt" t="Include" />
+              <e p="ProjectA.TeamA.csprojAssemblyReference.cache" t="Include" />
+              <e p="ProjectA.TeamA.dll" t="Include" />
+              <e p="ProjectA.TeamA.pdb" t="Include" />
+            </e>
+          </e>
+          <e p="project.assets.json" t="Include" />
+          <e p="project.packagespec.json" t="Include" />
+          <e p="ProjectA.TeamA.csproj.nuget.cache" t="Include" />
+          <e p="ProjectA.TeamA.csproj.nuget.dgspec.json" t="Include" />
+          <e p="ProjectA.TeamA.csproj.nuget.g.props" t="Include" />
+          <e p="ProjectA.TeamA.csproj.nuget.g.targets" t="Include" />
+        </e>
+        <e p="ProjectA.TeamA.csproj" t="IncludeRecursive" />
+      </e>
+      <e p="ProjectA.TeamB" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="ProjectA.TeamB.deps.json" t="Include" />
+              <e p="ProjectA.TeamB.dll" t="Include" />
+              <e p="ProjectA.TeamB.pdb" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="ClassA.cs" t="Include" />
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="ProjectA.TeamB.AssemblyInfo.cs" t="Include" />
+              <e p="ProjectA.TeamB.AssemblyInfoInputs.cache" t="Include" />
+              <e p="ProjectA.TeamB.assets.cache" t="Include" />
+              <e p="ProjectA.TeamB.csproj.CoreCompileInputs.cache" t="Include" />
+              <e p="ProjectA.TeamB.csproj.FileListAbsolute.txt" t="Include" />
+              <e p="ProjectA.TeamB.csprojAssemblyReference.cache" t="Include" />
+              <e p="ProjectA.TeamB.dll" t="Include" />
+              <e p="ProjectA.TeamB.pdb" t="Include" />
+            </e>
+          </e>
+          <e p="project.assets.json" t="Include" />
+          <e p="project.packagespec.json" t="Include" />
+          <e p="ProjectA.TeamB.csproj.nuget.cache" t="Include" />
+          <e p="ProjectA.TeamB.csproj.nuget.dgspec.json" t="Include" />
+          <e p="ProjectA.TeamB.csproj.nuget.g.props" t="Include" />
+          <e p="ProjectA.TeamB.csproj.nuget.g.targets" t="Include" />
+        </e>
+        <e p="ProjectA.TeamB.csproj" t="IncludeRecursive" />
+      </e>
     </e>
   </component>
 </project>
