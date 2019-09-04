@@ -1,14 +1,14 @@
 ﻿using System;
 using ProjectA.TeamA;
+using ProjectA.TeamB;
+
 class Program
 {
     public static void Main()
     {
-        // invoke via the using directive
-       ClassA.Print();
-
-       // invoke via the fully qualified name: namespace.class.method
-       ProjectA.TeamB.ClassA.Print();
+        // Ambiguous reference error
+        ClassA.print();
+        ClassA.print();
     }
 
 }
