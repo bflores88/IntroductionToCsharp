@@ -4,27 +4,16 @@ using System.Text;
 class Program
 {
     public static void Main()
-    {
-        Program.evenNumbers(30);
+    { 
+        int i = 0;
+        SimpleMethod(i);
+        Console.WriteLine(i); // 0
         
-        Program p = new Program();
-        int sum = p.Add(5, 5);
         
-        Console.WriteLine("sum = {0}", sum);
     }
 
-    public int Add(int fN, int sN)
+    public static void SimpleMethod(int j)
     {
-        return fN + sN;
-    }
-
-    public static void evenNumbers(int target)
-    {
-        int start = 0;
-        while (start <= target)
-        {
-            Console.WriteLine(start);
-            start = start + 2;
-        }
+        j = 101;
     }
 }
