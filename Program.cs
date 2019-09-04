@@ -5,15 +5,21 @@ class Program
 {
     public static void Main()
     {
-        int Total = 0;
-        int Product = 0;
-       Calculate(10, 20, out Total, out Product);
-       
-       Console.WriteLine("Sum = {0} && Product = {1}", Total, Product);
+        int[] numbers = new int[] {101, 102, 103};
+        
+        ParamsMethod();
+        ParamsMethod(numbers);
+        ParamsMethod(1, 2, 3, 4, 5);
+        
     }
-    public static void Calculate(int fN, int sN, out int Sum, out int Product)
+
+    public static void ParamsMethod(params int[] numbers)
     {
-        Sum = fN + sN;
-        Product = fN * sN;
-    } 
+        Console.WriteLine("There are {0} elements", numbers.Length);
+        foreach (int i in numbers)
+        {
+            Console.WriteLine(i);
+        }
+    }
+
 }
