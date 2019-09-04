@@ -7,6 +7,12 @@ class Customer
     private string _lastName;
 
     // constructor
+    public Customer() 
+        : this("No firstName Provided", "No lastName Provided")
+    {
+        
+    }
+
     public Customer(string firstName, string lastName)
     {
         this._firstName = firstName;
@@ -29,7 +35,7 @@ class Program
 {
     public static void Main()
     {
-        Customer C1 = new Customer("Jack", "Sparrow");
+        Customer C1 = new Customer();
         C1.printFullName();
     }
 
