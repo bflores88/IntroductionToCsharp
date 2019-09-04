@@ -1,42 +1,34 @@
 ﻿using System;
 
-class Customer
+class Circle
 {
-    // fields
-    private string _firstName;
-    private string _lastName;
+    static float _PI = 3.141F;
+    private int _Radius;
+    
 
-    // constructor
-    public Customer() 
-        : this("No firstName Provided", "No lastName Provided")
+    public Circle(int Radius)
     {
-        
+        this._Radius = Radius;
     }
 
-    public Customer(string firstName, string lastName)
+    public float CalculateArea()
     {
-        this._firstName = firstName;
-        this._lastName = lastName;
-    }
-
-    // method
-    public void printFullName()
-    {
-        Console.WriteLine("Full Name = {0}", this._firstName + " " + this._lastName);
+        return Circle._PI * this._Radius * this._Radius;
     }
     
-    // destructor
-    ~Customer()
-    {
-        // clean up code
-    }
 }
+
 class Program
 {
     public static void Main()
     {
-        Customer C1 = new Customer();
-        C1.printFullName();
+        Circle C1 = new Circle(5);
+        float Area1 = C1.CalculateArea();
+        Console.WriteLine("Area = {0}", Area1);
+        
+        Circle C2 = new Circle(6);
+        float Area2 = C2.CalculateArea();
+        Console.WriteLine("Area = {0}", Area2);
     }
 
 }
