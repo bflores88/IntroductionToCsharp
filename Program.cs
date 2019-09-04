@@ -1,25 +1,44 @@
 ﻿using System;
-using System.Text;
-
+using ProjectA.TeamA;
 class Program
 {
     public static void Main()
     {
-        int[] numbers = new int[] {101, 102, 103};
-        
-        ParamsMethod();
-        ParamsMethod(numbers);
-        ParamsMethod(1, 2, 3, 4, 5);
-        
+        // invoke via the using directive
+       ClassA.Print();
+
+       // invoke via the fully qualified name: namespace.class.method
+       ProjectA.TeamB.ClassA.Print();
     }
 
-    public static void ParamsMethod(params int[] numbers)
+}
+
+namespace ProjectA
+{
+    namespace TeamA
     {
-        Console.WriteLine("There are {0} elements", numbers.Length);
-        foreach (int i in numbers)
+        class ClassA
         {
-            Console.WriteLine(i);
+            public static void Print()
+            {
+                Console.WriteLine("Team A Print Method");
+            }
         }
-    }
+}
+
+}
+
+namespace ProjectA
+{
+    namespace TeamB
+    {
+        class ClassA
+        {
+            public static void Print()
+            {
+                Console.WriteLine("Team B Print Method");
+            }
+        }
+}
 
 }
