@@ -1,14 +1,15 @@
 ﻿using System;
-using ProjectA.TeamA;
-using ProjectA.TeamB;
-
+using PATA = ProjectA.TeamA;
+using PATB = ProjectA.TeamB;
 class Program
 {
     public static void Main()
     {
-        // Ambiguous reference error
-        ClassA.print();
-        ClassA.print();
+        // alias directives can be used to resolve ambiguity between names (other than fully qualified name)
+        PATA.ClassA.Print();
+        PATB.ClassA.Print();
+        
+        // alias directives are also helpful when the namespace names are very long
     }
 
 }
