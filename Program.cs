@@ -1,33 +1,43 @@
 ﻿using System;
 
-public class ParentClass
+public class Employee
 {
-    public ParentClass()
+    public string FirstName;
+    public string LastName;
+
+    public void PrintFullName()
     {
-        Console.WriteLine("ParentClass Constructor called");
-    }
-    
-    // overloading constructor
-    public ParentClass(string Message)
-    {
-        Console.WriteLine(Message);
+        Console.WriteLine(FirstName + " " + LastName);
     }
 }
 
-public class ChildClass : ParentClass
+public class PartTimeEmployee : Employee
 {
-    // use base to control which constructor is called
-    public ChildClass(): base("Derived class controller Parent class")
+    // the method below hides the PrintFullName method in the parent class
+    public new void PrintFullName()
     {
-        Console.WriteLine("ChildClass constructor called");
+        Console.WriteLine(FirstName + " " + LastName + " - Contractor");
     }
+}
+
+public class FullTimeEmployee : Employee
+{
+    
 }
 public class Program
 {
     public static void Main()
     {
+       FullTimeEmployee FTE = new FullTimeEmployee();
+       FTE.FirstName = "Full Time";
+       FTE.LastName = "Employee";
+       FTE.PrintFullName();
        
-        ChildClass CC = new ChildClass();
+       PartTimeEmployee PTE = new PartTimeEmployee();
+       PTE.FirstName = "Part Time";
+       PTE.LastName = "Employee";
+       ((Employee) PTE).PrintFullName();
+
     }
 
 }
