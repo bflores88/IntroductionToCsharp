@@ -1,57 +1,60 @@
 ﻿using System;
 
-public class Employee
+public class Student
 {
-    public string FirstName = "FN";
-    public string LastName = "LN";
+    private int _id;
+    private string _name;
+    private int _passMark = 35;
 
-    public virtual void PrintFullName()
+    public int GetPassMark()
     {
-        Console.WriteLine(FirstName + " " + LastName);
+        return this._passMark;
+    }
+    public void SetName(string name)
+    {
+        if (string.IsNullOrEmpty(name))
+        {
+            throw new Exception("Name cannot be null or empty");
+        }
+
+        this._name = name;
+    }
+
+    public string GetName()
+    {
+        return string.IsNullOrEmpty(this._name) ? "No Name" : this._name;
+    }
+
+    public void SetId(int Id)
+    {
+        if (Id <= 0)
+        {
+            throw new Exception("Student Id cannot be negative");
+        }
+
+        this._id = Id;
+    }
+
+    public int GetId()
+    {
+        return this._id;
     }
 }
 
-public class PartTimeEmployee : Employee
-{
-    public override void PrintFullName()
-    {
-        Console.WriteLine(FirstName + " " + LastName + " - Part Time");
-    }
-}
 
-public class FullTimeEmployee : Employee
-{
-    public override void PrintFullName()
-    {
-        Console.WriteLine(FirstName + " " + LastName + " - Full Time");
-    }
-}
-
-public class TemporaryEmployee : Employee
-{
-    public override void PrintFullName()
-    {
-        Console.WriteLine(FirstName + " " + LastName + " - Temporary");
-    }
-}
 public class Program
 {
     public static void Main()
     {
-        Employee[] employees = new Employee[4];
+        Student c1 = new Student();
+        c1.SetId(10);
+        c1.SetName("Mia");
+        Console.WriteLine("Student Id = {0} && Student Name = {1} && Student PassMark = {2}", c1.GetId(), c1.GetName(), c1.GetPassMark());
         
-        employees[0] = new Employee();
-        employees[1] = new PartTimeEmployee();
-        employees[2] = new FullTimeEmployee();
-        employees[3] = new TemporaryEmployee();
-
-        foreach (var e in employees)
-        {
-            e.PrintFullName();
-        }
- 
-
+        
+        
     }
+
 
 }
 
