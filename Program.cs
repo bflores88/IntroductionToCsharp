@@ -33,10 +33,10 @@ public class Program
        FTE.LastName = "Employee";
        FTE.PrintFullName();
        
-       PartTimeEmployee PTE = new PartTimeEmployee();
+       Employee PTE = new PartTimeEmployee();
        PTE.FirstName = "Part Time";
        PTE.LastName = "Employee";
-       ((Employee) PTE).PrintFullName();
+       PTE.PrintFullName();
 
     }
 
