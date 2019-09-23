@@ -6,39 +6,42 @@ public class Student
     private string _name;
     private int _passMark = 35;
 
-    public int GetPassMark()
+    public int PassMark
     {
-        return this._passMark;
+        get => this._passMark;
     }
-    public void SetName(string name)
+
+    public string Name
     {
-        if (string.IsNullOrEmpty(name))
+        set
         {
-            throw new Exception("Name cannot be null or empty");
+            if (string.IsNullOrEmpty(value))
+            {
+                throw new Exception("Name cannot be null or empty");
+            }
+
+            this._name = value;
         }
 
-        this._name = name;
+        get => string.IsNullOrEmpty(this._name) ? "No Name" : this._name;
     }
 
-    public string GetName()
+    public int Id
     {
-        return string.IsNullOrEmpty(this._name) ? "No Name" : this._name;
-    }
-
-    public void SetId(int Id)
-    {
-        if (Id <= 0)
+        set
         {
-            throw new Exception("Student Id cannot be negative");
+            
+            if (value <= 0)
+            {
+                throw new Exception("Student Id cannot be negative");
+            }
+
+            this._id = value;
         }
 
-        this._id = Id;
+        get => this._id;
     }
-
-    public int GetId()
-    {
-        return this._id;
-    }
+    
 }
 
 
@@ -47,12 +50,10 @@ public class Program
     public static void Main()
     {
         Student c1 = new Student();
-        c1.SetId(10);
-        c1.SetName("Mia");
-        Console.WriteLine("Student Id = {0} && Student Name = {1} && Student PassMark = {2}", c1.GetId(), c1.GetName(), c1.GetPassMark());
-        
-        
-        
+        c1.Id = 101;
+        c1.Name = "Brenda";
+        Console.WriteLine("Student Id = {0} && Student Name = {1} && Student PassMark = {2}", c1.Id, c1.Name, c1.PassMark);
+
     }
 
 
