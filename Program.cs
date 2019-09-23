@@ -1,41 +1,36 @@
 ﻿using System;
 
-class Circle
+public class Employee
 {
-    public static float _PI;
-    private int _Radius;
+    public string FirstName;
+    public string LastName;
+    public string Email;
 
-    static Circle()
+    public void PrintFullName()
     {
-        Console.WriteLine("Static Constructor Called");
-        Circle._PI = 3.141F;
+        
     }
-
-    public Circle(int Radius)
-    {
-        Console.WriteLine("Instance Constructor Called");
-        this._Radius = Radius;
-    }
-
-    public float CalculateArea()
-    {
-        return Circle._PI * this._Radius * this._Radius;
-    }
-    
 }
 
-class Program
+public class FullTimeEmployee : Employee
+{
+    public float YearlySalary;
+}
+
+public class PartTimeEmployee : Employee
+{
+    public float HourlyRate;
+}
+
+public class Program
 {
     public static void Main()
     {
-        Console.WriteLine(Circle._PI);
-//        Circle C1 = new Circle(5);
-//        float Area1 = C1.CalculateArea();
-//        Console.WriteLine("Area = {0}", Area1);
-//        
-//        Circle C2 = new Circle(6);
-//        float Area2 = C2.CalculateArea();
-//        Console.WriteLine("Area = {0}", Area2);
+        FullTimeEmployee FTE = new FullTimeEmployee();
+        FTE.FirstName = "Brenda";
+        FTE.LastName = "Meow";
+        FTE.PrintFullName();
+        FTE.YearlySalary = 50000;
     }
 
 }
