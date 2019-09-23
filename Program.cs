@@ -2,10 +2,10 @@
 
 public class Employee
 {
-    public string FirstName;
-    public string LastName;
+    public string FirstName = "FN";
+    public string LastName = "LN";
 
-    public void PrintFullName()
+    public virtual void PrintFullName()
     {
         Console.WriteLine(FirstName + " " + LastName);
     }
@@ -13,30 +13,43 @@ public class Employee
 
 public class PartTimeEmployee : Employee
 {
-    // the method below hides the PrintFullName method in the parent class
-    public new void PrintFullName()
+    public override void PrintFullName()
     {
-        Console.WriteLine(FirstName + " " + LastName + " - Contractor");
+        Console.WriteLine(FirstName + " " + LastName + " - Part Time");
     }
 }
 
 public class FullTimeEmployee : Employee
 {
-    
+    public override void PrintFullName()
+    {
+        Console.WriteLine(FirstName + " " + LastName + " - Full Time");
+    }
+}
+
+public class TemporaryEmployee : Employee
+{
+    public override void PrintFullName()
+    {
+        Console.WriteLine(FirstName + " " + LastName + " - Temporary");
+    }
 }
 public class Program
 {
     public static void Main()
     {
-       FullTimeEmployee FTE = new FullTimeEmployee();
-       FTE.FirstName = "Full Time";
-       FTE.LastName = "Employee";
-       FTE.PrintFullName();
-       
-       Employee PTE = new PartTimeEmployee();
-       PTE.FirstName = "Part Time";
-       PTE.LastName = "Employee";
-       PTE.PrintFullName();
+        Employee[] employees = new Employee[4];
+        
+        employees[0] = new Employee();
+        employees[1] = new PartTimeEmployee();
+        employees[2] = new FullTimeEmployee();
+        employees[3] = new TemporaryEmployee();
+
+        foreach (var e in employees)
+        {
+            e.PrintFullName();
+        }
+ 
 
     }
 
