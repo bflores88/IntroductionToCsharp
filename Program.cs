@@ -1,36 +1,33 @@
 ﻿using System;
 
-public class Employee
+public class ParentClass
 {
-    public string FirstName;
-    public string LastName;
-    public string Email;
-
-    public void PrintFullName()
+    public ParentClass()
     {
-        
+        Console.WriteLine("ParentClass Constructor called");
+    }
+    
+    // overloading constructor
+    public ParentClass(string Message)
+    {
+        Console.WriteLine(Message);
     }
 }
 
-public class FullTimeEmployee : Employee
+public class ChildClass : ParentClass
 {
-    public float YearlySalary;
+    // use base to control which constructor is called
+    public ChildClass(): base("Derived class controller Parent class")
+    {
+        Console.WriteLine("ChildClass constructor called");
+    }
 }
-
-public class PartTimeEmployee : Employee
-{
-    public float HourlyRate;
-}
-
 public class Program
 {
     public static void Main()
     {
-        FullTimeEmployee FTE = new FullTimeEmployee();
-        FTE.FirstName = "Brenda";
-        FTE.LastName = "Meow";
-        FTE.PrintFullName();
-        FTE.YearlySalary = 50000;
+       
+        ChildClass CC = new ChildClass();
     }
 
 }
