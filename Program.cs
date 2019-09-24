@@ -1,45 +1,45 @@
 ﻿using System;
 
 
-interface ICustomer1
+interface I1
 {
-    // fields not allowed
-    // int _id;
-    
-    
-    // declarations only
-    void Print1();
+    void InterfaceMethod();
 }
 
-interface ICustomer2: ICustomer1
+interface I2
 {
-    void Print2();
+    void InterfaceMethod();
 }
 
 
-public class Customer : ICustomer2
+public class Program: I1, I2
 {
-    // class must provide implementation for interface member
-
-    public void Print1()
+    // do not use access modifiers on implementation
+    void I1.InterfaceMethod()
+         {
+             Console.WriteLine("I1 Interface Method");
+         }
+    
+    void I2.InterfaceMethod()
     {
-        Console.WriteLine("Print1 Method");
+        Console.WriteLine("I2 Interface Method");
     }
-    
-    public void Print2()
-    {
-        Console.WriteLine("Print2 Method");
-    }
-}
 
-
-
-public class Program
-{
     public static void Main()
     {
-        ICustomer1 c1 = new Customer();
-        c1.Print1();
+        // use type casting
+        /* Program P = new Program();
+        ((I1)P).InterfaceMethod();
+        ((I2)P).InterfaceMethod();
+        */
+        
+        // use interface reference variable to instantiate the class
+        /* I1 i1 = new Program();
+        I2 i2 = new Program();
+        i1.InterfaceMethod();
+        i2.InterfaceMethod();
+        */ 
+        
     }
 
 }
