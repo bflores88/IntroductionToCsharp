@@ -1,63 +1,46 @@
 ﻿using System;
 
-public struct Customer
+
+interface ICustomer1
 {
-    // private fields
-    private int _id;
-    private string _name;
-
+    // fields not allowed
+    // int _id;
     
-    // public properties
-    public string Name
-    {
-        get => this._name;
-        set => this._name = value;
-    }
-    public int Id
-    {
-        get => this._id;
-        set => this._id = value;
-    }
+    
+    // declarations only
+    void Print1();
+}
 
-    // constructor
-    public Customer(int Id, string Name)
+interface ICustomer2: ICustomer1
+{
+    void Print2();
+}
+
+
+public class Customer : ICustomer2
+{
+    // class must provide implementation for interface member
+
+    public void Print1()
     {
-        this._id = Id;
-        this._name = Name;
+        Console.WriteLine("Print1 Method");
     }
     
-    // methods
-
-    public void PrintDetails()
+    public void Print2()
     {
-        Console.WriteLine("Id = {0} && Name = {1}", this._id, this._name);
+        Console.WriteLine("Print2 Method");
     }
 }
+
 
 
 public class Program
 {
     public static void Main()
     {
-        // using constructor
-        Customer c1 = new Customer(101, "Mark");
-        c1.PrintDetails();
-        
-        // using default constructor and public methods
-        Customer c2 = new Customer();
-        c2.Id = 102;
-        c2.Name = "Ferdinand";
-        c2.PrintDetails();
-        
-        // using object initializer syntax
-        Customer c3 = new Customer
-        {
-            Id = 103,
-            Name = "Robert"
-        };
-        c3.PrintDetails();
+        ICustomer1 c1 = new Customer();
+        c1.Print1();
     }
-
 
 }
 
